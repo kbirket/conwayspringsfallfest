@@ -106,7 +106,6 @@
 }
 .csff__heroinner { position: relative; z-index: 1; max-width: 1180px; padding-block: clamp(3.75rem, 9vw, 6rem); }
 .csff__heroinner > * { max-width: 660px; }
-.csff__heroinner { margin-left: 0; margin-right: auto; }
 .csff__hero h1 {
   font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;
   font-size: clamp(2.9rem, 8.5vw, 5.4rem); line-height: .92; color: var(--ink);
