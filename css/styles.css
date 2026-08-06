@@ -85,7 +85,7 @@
 .csff__nav a.csff__btn:hover { color: #fff; }
 
 /* nav wordmark */
-.csff__logo { margin-right: auto; padding: 0; border-bottom: 0 !important; flex: none; }
+.csff__logo { margin-right: 1.5rem; padding: 0; border-bottom: 0 !important; flex: none; }
 .csff__logo img { width: 200px; height: auto; display: block; }
 @media (max-width: 900px) {
   .csff__navinner { justify-content: center; }
@@ -331,4 +331,12 @@
 @media (min-width: 1500px) {
   .csff__hero .csff__heroinner,
   .csff__band .csff__bandgrid { max-width: 1360px; }
+}
+
+/* hero text must sit above the gradient scrim */
+.csff__hero { align-items: flex-start; }
+.csff__hero .csff__heroinner {
+  position: relative;
+  z-index: 1;
+  padding-block: clamp(2rem, 4vw, 3rem) clamp(3rem, 7vw, 5rem);
 }
