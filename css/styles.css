@@ -104,7 +104,7 @@
 @media (max-width: 760px) {
   .csff__hero::before { background: linear-gradient(180deg, rgba(248,243,233,.96) 0%, rgba(248,243,233,.9) 62%, rgba(248,243,233,.55) 100%); }
 }
-.csff__heroinner { position: relative; z-index: 1; max-width: 1180px; padding-block: clamp(3.75rem, 9vw, 6rem); }
+.csff__heroinner { position: relative; z-index: 1; max-width: 1180px; margin-inline: auto; padding-block: clamp(3.75rem, 9vw, 6rem); }
 .csff__heroinner > * { max-width: 660px; }
 .csff__hero h1 {
   font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;
