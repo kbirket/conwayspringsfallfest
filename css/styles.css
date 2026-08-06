@@ -297,3 +297,60 @@
 @media (min-width: 1500px) {
   .csff__band .csff__bandgrid { max-width: 1360px; }
 }
+
+/* ---------- theme / parchment panel ---------- */
+.csff__parchment {
+  position: relative;
+  background-image: url('../images/papercastle.png');
+  background-size: cover; background-position: center right;
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+}
+.csff__themegrid { display: grid; gap: clamp(2rem, 4vw, 3rem); grid-template-columns: 1fr; align-items: center; position: relative; z-index: 1; }
+@media (min-width: 860px) { .csff__themegrid { grid-template-columns: 300px 1fr; } }
+.csff__themeart img { width: 100%; max-width: 300px; border-radius: 50%; margin-inline: auto; }
+@media (max-width: 859px) {
+  .csff__parchment { background-position: 72% center; }
+  .csff__parchment::before { content: ""; position: absolute; inset: 0; background: rgba(244,234,214,.80); }
+}
+
+/* ---------- red plan band ---------- */
+.csff__planband { background: var(--brick); }
+.csff__planbandinner { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; align-items: center; justify-content: space-between; padding-block: clamp(2rem, 4vw, 2.75rem); }
+.csff__planband h2.csff__h { color: #fff; font-size: clamp(1.6rem, 3.2vw, 2.2rem); }
+.csff__planband p { color: #f6e3dc; margin-top: .4rem; }
+.csff__btn--onred { color: #fff; border-color: #fff; background: transparent; }
+.csff__btn--onred:hover, .csff__btn--onred:focus-visible { background: #fff; color: var(--brick); border-color: #fff; }
+
+/* light version of the info band */
+.csff__bandgrid--light { color: var(--body); }
+.csff__bandgrid--light .csff__banditem svg { stroke: var(--olive); }
+.csff__bandgrid--light .csff__banditem dt { color: var(--ink); }
+.csff__bandgrid--light .csff__banditem dd { color: var(--body); }
+.csff__bandgrid--light .csff__banditem + .csff__banditem { border-left-color: var(--line); }
+
+/* ---------- sponsor list ---------- */
+.csff__sponsorlist { list-style: none; padding: 0; margin-top: 2rem; display: grid; gap: 0 2.5rem; grid-template-columns: 1fr; }
+@media (min-width: 620px) { .csff__sponsorlist { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .csff__sponsorlist { grid-template-columns: repeat(3, 1fr); } }
+.csff__sponsorlist li { padding: .7rem 0; border-bottom: 1px solid var(--line); font-size: 1.02rem; line-height: 1.4; }
+
+/* ---------- map figure ---------- */
+.csff__mapfig { margin: 2rem 0 0; }
+.csff__mapfig img { width: 100%; border: 1px solid var(--line); background: #fff; }
+.csff__mapfig figcaption { margin-top: .8rem; font-size: .92rem; color: var(--body); }
+
+/* ---------- forms ---------- */
+.csff__form { max-width: 720px; margin-top: 2.5rem; }
+.csff__field { margin-bottom: 1.4rem; }
+.csff__field label { display: block; margin-bottom: .45rem; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
+.csff__field .csff__hint { display: block; font-family: 'Barlow', sans-serif; font-weight: 400; font-size: .88rem; letter-spacing: 0; text-transform: none; color: var(--body); margin-top: .2rem; }
+.csff__field input, .csff__field select, .csff__field textarea { width: 100%; padding: .8rem .9rem; font-family: 'Barlow', sans-serif; font-size: 1.02rem; color: var(--ink); background: #fff; border: 2px solid var(--line); border-radius: 0; }
+.csff__field input:focus, .csff__field select:focus, .csff__field textarea:focus { outline: 3px solid var(--brick); outline-offset: 2px; border-color: var(--olive); }
+.csff__field textarea { min-height: 110px; resize: vertical; }
+.csff__field--row { display: grid; gap: 1.4rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .csff__field--row { grid-template-columns: 1fr 1fr; } }
+.csff__req { color: var(--brick); }
+.csff__check { display: flex; gap: .7rem; align-items: flex-start; }
+.csff__check input { width: auto; margin-top: .35rem; flex: none; }
+.csff__check label { text-transform: none; letter-spacing: 0; font-family: 'Barlow', sans-serif; font-weight: 400; font-size: .98rem; color: var(--body); }
+.csff__hp { position: absolute; left: -9999px; }
