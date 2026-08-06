@@ -1,0 +1,11 @@
+title: Conway Springs Fall Festival
+description: Parade, car show, live music, arts and crafts, food and fireworks in downtown Conway Springs, Kansas.
+url: https://conwayspringsfallfest.org
+
+# Set to true when the site goes public — turns off noindex
+# and points the Home link at / instead of /home
+launched: false
+
+exclude:
+  - README.md
+  - images-original/
