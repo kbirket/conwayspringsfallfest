@@ -242,3 +242,34 @@
 .csff__stage li { display: grid; grid-template-columns: 72px 1fr; gap: 1rem; padding: .85rem 0; border-top: 1px solid var(--line); }
 .csff__stage time { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: .95rem; color: var(--brick); }
 .csff__stage span { font-size: 1rem; line-height: 1.4; }
+
+/* ---------- phones ---------- */
+@media (max-width: 560px) {
+  /* Nav: 8 bold links were wrapping into a tall block that ate the screen.
+     Smaller, tighter, and no longer sticky so it scrolls away. */
+  .csff__nav { position: static; }
+  .csff__navinner { gap: .55rem 1.15rem; padding-block: 1rem; }
+  .csff__nav a { font-size: .82rem; letter-spacing: .04em; }
+  .csff__nav a.csff__btn { padding: .6rem 1.2rem; font-size: .78rem; }
+
+  /* Schedule: a fixed 120px time column left almost nothing
+     for event names. Stack instead. */
+  .csff__slot { grid-template-columns: 1fr; gap: .3rem; padding: 1.5rem 0; }
+  .csff__slot time { font-size: 1.1rem; }
+
+  /* Feature icons: two columns squeezed the text. One column reads better. */
+  .csff__featgrid { grid-template-columns: 1fr; }
+  .csff__feat { border-left: 0; border-top: 1px solid var(--line); padding: 1.75rem 1rem; }
+  .csff__feat:first-child { border-top: 0; }
+
+  /* Live stage list */
+  .csff__stage li { grid-template-columns: 60px 1fr; }
+}
+
+/* ---------- big monitors ---------- */
+@media (min-width: 1500px) {
+  .csff { font-size: 1.15rem; }
+  .csff__wrap { max-width: 1360px; }
+  .csff__hero h1 { font-size: 6.2rem; }
+  .csff__hero { min-height: 740px; }
+}
