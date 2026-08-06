@@ -1,7 +1,7 @@
 .csff {
   /* ---------- IMAGE SLOTS — paste your photo URLs here ---------- */
 --csff-img-hero:     url('../images/fallfestpic.jpeg');   /* wide festival crowd shot */
-  --csff-img-together: url('');   /* booths under trees */
+--csff-img-together: url('../images/DogFallFest.jpeg');   /* booths under trees */
   --csff-img-card-1:   url('');   /* schedule / stage */
   --csff-img-card-2:   url('');   /* parade */
   --csff-img-card-3:   url('');   /* craft booths */
@@ -149,10 +149,10 @@
 .csff__bandgrid { display: grid; grid-template-columns: 1fr; padding-block: clamp(2.4rem, 5vw, 3.25rem); }
 @media (min-width: 780px) { .csff__bandgrid { grid-template-columns: repeat(3, 1fr); } }
 .csff__banditem { display: flex; gap: 1.15rem; padding: 1.15rem 0; align-items: flex-start; }
+.csff__banditem { display: flex; gap: 1.15rem; padding: 1.15rem 0; align-items: flex-start; justify-content: center; }
 @media (min-width: 780px) {
-  .csff__banditem { padding: .6rem 2.4rem; }
+  .csff__banditem { padding: .6rem 1.5rem; }
   .csff__banditem + .csff__banditem { border-left: 1px solid rgba(255,255,255,.28); }
-  .csff__banditem:first-child { padding-left: 0; }
 }
 .csff__banditem svg { width: 34px; height: 34px; flex: none; stroke: #fff; fill: none; stroke-width: 1.4; }
 .csff__banditem dt { font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; font-size: .92rem; letter-spacing: .1em; }
