@@ -1,7 +1,7 @@
 .csff {
-  /* ---------- IMAGE SLOTS — paste your photo URLs here ---------- */
-  --csff-img-hero:     url('../images/fallfestfront.png');   /* wide festival crowd shot */
-  --csff-img-together: url('../images/DogFallFest.jpeg');    /* booths under trees */
+  /* ---------- IMAGE SLOTS ---------- */
+  --csff-img-hero:     url('../images/fallfestfront.png');
+  --csff-img-together: url('../images/DogFallFest.jpeg');
   --csff-img-card-1:   url('');   /* schedule / stage */
   --csff-img-card-2:   url('');   /* parade */
   --csff-img-card-3:   url('');   /* craft booths */
@@ -33,11 +33,6 @@
 .csff__wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.1rem, 4vw, 2.5rem); }
 
 /* ---------- type ---------- */
-.csff__display {
-  font-family: 'Oswald', 'Barlow Condensed', sans-serif;
-  font-weight: 600; text-transform: uppercase; color: var(--ink);
-  letter-spacing: .01em; line-height: 1.02;
-}
 .csff__eyebrow {
   font-family: 'Oswald', sans-serif; font-weight: 500;
   font-size: .82rem; letter-spacing: .18em; text-transform: uppercase;
@@ -78,7 +73,7 @@
 
 /* ---------- nav ---------- */
 .csff__nav { background: var(--cream); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 40; }
-.csff__navinner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .9rem 2.6rem; padding-block: 1.5rem; }
+.csff__navinner { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: .9rem 2.2rem; padding-block: 1.1rem; }
 .csff__nav a {
   font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1.02rem;
   letter-spacing: .08em; text-transform: uppercase;
@@ -88,6 +83,15 @@
 .csff__nav a:hover, .csff__nav a:focus-visible, .csff__nav a[aria-current] { color: var(--brick); border-bottom-color: var(--brick); }
 .csff__nav a.csff__btn { color: #fff; border-bottom: 3px solid var(--brick); padding: .8rem 1.7rem; font-size: .9rem; letter-spacing: .1em; }
 .csff__nav a.csff__btn:hover { color: #fff; }
+
+/* nav wordmark */
+.csff__logo { margin-right: auto; padding: 0; border-bottom: 0 !important; flex: none; }
+.csff__logo img { width: 200px; height: auto; display: block; }
+@media (max-width: 900px) {
+  .csff__navinner { justify-content: center; }
+  .csff__logo { margin-right: 0; flex-basis: 100%; }
+  .csff__logo img { width: 230px; margin-inline: auto; }
+}
 
 /* ---------- hero ---------- */
 .csff__hero {
@@ -104,7 +108,6 @@
 @media (max-width: 760px) {
   .csff__hero::before { background: linear-gradient(180deg, rgba(248,243,233,.96) 0%, rgba(248,243,233,.9) 62%, rgba(248,243,233,.55) 100%); }
 }
-.csff__heroinner { position: relative; z-index: 1; width: 100%; max-width: 1180px; margin-inline: auto; padding-block: clamp(3.75rem, 9vw, 6rem); }
 .csff__heroinner > * { max-width: 660px; }
 .csff__hero h1 {
   font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;
@@ -158,145 +161,20 @@
 .csff__banditem dt { font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; font-size: .92rem; letter-spacing: .1em; }
 .csff__banditem dd { margin: .25rem 0 0; font-size: 1rem; color: #eef1e4; line-height: 1.45; }
 
-/* ---------- plan your day cards ---------- */
-.csff__plan { padding: clamp(4rem, 8vw, 6rem) 0; }
-.csff__plangrid { display: grid; grid-template-columns: 1fr; gap: clamp(2.5rem, 5vw, 4rem); align-items: start; }
-@media (min-width: 940px) { .csff__plangrid { grid-template-columns: .85fr 2fr; } }
-.csff__cards { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-@media (min-width: 620px) { .csff__cards { grid-template-columns: repeat(3, 1fr); } }
-.csff__card { text-align: center; text-decoration: none; display: block; color: inherit; }
-.csff__cardimg { aspect-ratio: 4/3; background-size: cover; background-position: center; background-image: var(--fallback); }
-.csff__card:nth-child(1) .csff__cardimg { background-image: var(--csff-img-card-1), var(--fallback); }
-.csff__card:nth-child(2) .csff__cardimg { background-image: var(--csff-img-card-2), var(--fallback); }
-.csff__card:nth-child(3) .csff__cardimg { background-image: var(--csff-img-card-3), var(--fallback); }
-.csff__card h3 { margin-top: .9rem; }
-.csff__card p { font-size: .95rem; margin-top: .35rem; }
-.csff__card:hover h3, .csff__card:focus-visible h3 { color: var(--brick); }
+/* light version of the info band */
+.csff__bandgrid--light { color: var(--body); }
+.csff__bandgrid--light .csff__banditem svg { stroke: var(--olive); }
+.csff__bandgrid--light .csff__banditem dt { color: var(--ink); }
+.csff__bandgrid--light .csff__banditem dd { color: var(--body); }
+.csff__bandgrid--light .csff__banditem + .csff__banditem { border-left-color: var(--line); }
 
-/* ---------- schedule ---------- */
-.csff__section { padding: clamp(4rem, 8vw, 6.5rem) 0; }
-.csff__section--alt { background: var(--cream-2); }
-.csff__sechead { max-width: 62ch; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
-.csff__sechead--center { text-align: center; margin-inline: auto; }
-
-.csff__schedule { list-style: none; padding: 0; max-width: 860px; }
-.csff__slot { display: grid; grid-template-columns: 120px 1fr; gap: 1.8rem; padding: 1.9rem 0; border-top: 1px solid var(--line); }
-.csff__slot:last-child { border-bottom: 1px solid var(--line); }
-.csff__slot time { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; color: var(--brick); padding-top: .12rem; }
-.csff__slot h3 { font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; font-size: 1.02rem; letter-spacing: .05em; color: var(--ink); }
-.csff__slot p { font-size: .98rem; margin-top: .25rem; }
-.csff__where { font-size: .88rem; color: var(--olive); font-weight: 600; }
-
-/* ---------- info cards ---------- */
-.csff__grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
-@media (min-width: 760px) { .csff__grid--3 { grid-template-columns: repeat(3,1fr); } .csff__grid--2 { grid-template-columns: repeat(2,1fr); } }
-.csff__box { background: var(--cream); border: 1px solid var(--line); border-top: 4px solid var(--olive); padding: 2.2rem 2rem; }
-.csff__section--alt .csff__box { background: #fff; }
-.csff__box:nth-child(2) { border-top-color: var(--brick); }
-.csff__box p { font-size: .98rem; margin-top: .55rem; }
-
-/* ---------- sponsors ---------- */
-.csff__tiers { display: grid; gap: 2rem; grid-template-columns: 1fr; }
-@media (min-width: 700px) { .csff__tiers { grid-template-columns: repeat(4,1fr); } }
-.csff__tier { text-align: center; padding: 2.25rem 1.25rem; background: var(--cream); border: 1px solid var(--line); }
-.csff__section--alt .csff__tier { background: #fff; }
-.csff__tier b { display: block; font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; font-size: .88rem; letter-spacing: .1em; color: var(--brick); }
-.csff__tier span { display: block; margin-top: .5rem; font-size: .98rem; }
-
-/* ---------- donate ---------- */
-.csff__donate { background: var(--olive); color: #fff; padding: clamp(4rem, 8vw, 6rem) 0; }
-.csff__donate h2.csff__h { color: #fff; }
-.csff__donate .csff__eyebrow { color: #d8c98f; }
-.csff__donate p { color: #eaeddf; }
-
-/* ---------- footer ---------- */
-.csff__foot { background: var(--olive-dk); color: #dfe3d2; padding: 3.25rem 0; }
-.csff__footinner { display: flex; flex-wrap: wrap; gap: 1.4rem 2rem; align-items: center; justify-content: center; text-align: center; }
-.csff__foot a { color: #fff; }
-.csff__social { display: flex; gap: .7rem; }
-.csff__social a { width: 38px; height: 38px; border: 1.5px solid rgba(255,255,255,.65); border-radius: 50%; display: grid; place-content: center; }
-.csff__social svg { width: 17px; height: 17px; fill: #fff; }
-
-/* ---------- quality floor ---------- */
-.csff a:focus-visible { outline: 3px solid var(--brick); outline-offset: 3px; }
-.csff__band a:focus-visible, .csff__donate a:focus-visible, .csff__foot a:focus-visible { outline-color: #fff; }
-.csff__skip { position: absolute; left: -9999px; background: var(--ink); color: #fff; padding: .8rem 1.3rem; z-index: 60; }
-.csff__skip:focus { left: 1rem; top: 1rem; }
-.csff--js .csff__reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
-.csff--js .csff__reveal.is-in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .csff--js .csff__reveal { opacity: 1; transform: none; transition: none; } }
-
-/* ---------- schedule day headings + sponsors ---------- */
-.csff__dayhead {
-  font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase;
-  font-size: 1.6rem; letter-spacing: .05em; color: var(--ink);
-  margin-top: 3.5rem; padding-bottom: .7rem; border-bottom: 3px solid var(--brick);
-}
-.csff__schedule + .csff__dayhead, .csff__dayhead:first-of-type { margin-top: 0; }
-.csff__sponsor { font-size: .86rem; color: #6f7162; margin-top: .4rem; }
-.csff__sponsor b { font-weight: 600; color: var(--olive); }
-
-/* ---------- live stage list ---------- */
-.csff__stage { list-style: none; padding: 0; display: grid; gap: 0 2.5rem; grid-template-columns: 1fr; }
-@media (min-width: 700px) { .csff__stage { grid-template-columns: repeat(2, 1fr); } }
-.csff__stage li { display: grid; grid-template-columns: 72px 1fr; gap: 1rem; padding: .85rem 0; border-top: 1px solid var(--line); }
-.csff__stage time { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: .95rem; color: var(--brick); }
-.csff__stage span { font-size: 1rem; line-height: 1.4; }
-
-/* ---------- phones ---------- */
-@media (max-width: 560px) {
-  /* Nav: 8 bold links were wrapping into a tall block that ate the screen.
-     Smaller, tighter, and no longer sticky so it scrolls away. */
-  .csff__nav { position: static; }
-  .csff__navinner { gap: .55rem 1.15rem; padding-block: 1rem; }
-  .csff__nav a { font-size: .82rem; letter-spacing: .04em; }
-  .csff__nav a.csff__btn { padding: .6rem 1.2rem; font-size: .78rem; }
-
-  /* Schedule: a fixed 120px time column left almost nothing
-     for event names. Stack instead. */
-  .csff__slot { grid-template-columns: 1fr; gap: .3rem; padding: 1.5rem 0; }
-  .csff__slot time { font-size: 1.1rem; }
-
-  /* Feature icons: two columns squeezed the text. One column reads better. */
-  .csff__featgrid { grid-template-columns: 1fr; }
-  .csff__feat { border-left: 0; border-top: 1px solid var(--line); padding: 1.75rem 1rem; }
-  .csff__feat:first-child { border-top: 0; }
-
-  /* Live stage list */
-  .csff__stage li { grid-template-columns: 60px 1fr; }
-}
-
-/* ---------- big monitors ---------- */
-@media (min-width: 1500px) {
-  .csff { font-size: 1.15rem; }
-  .csff__wrap { max-width: 1360px; }
-  .csff__hero h1 { font-size: 6.2rem; }
-  .csff__hero { min-height: 740px; }
-}
-
-/* ---------- hero alignment (must stay last) ---------- */
-.csff__hero .csff__heroinner {
-  width: 100%;
-  max-width: 1180px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-inline: clamp(1.1rem, 4vw, 2.5rem);
-}
-@media (min-width: 1500px) {
-  .csff__hero .csff__heroinner { max-width: 1360px; }
-}
-
-/* ---------- info band alignment (keep last) ---------- */
-.csff__band .csff__bandgrid {
-  width: 100%;
-  max-width: 1180px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-inline: clamp(1.1rem, 4vw, 2.5rem);
-}
-@media (min-width: 1500px) {
-  .csff__band .csff__bandgrid { max-width: 1360px; }
-}
+/* ---------- red plan band ---------- */
+.csff__planband { background: var(--brick); }
+.csff__planbandinner { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; align-items: center; justify-content: space-between; padding-block: clamp(2rem, 4vw, 2.75rem); }
+.csff__planband h2.csff__h { color: #fff; font-size: clamp(1.6rem, 3.2vw, 2.2rem); }
+.csff__planband p { color: #f6e3dc; margin-top: .4rem; }
+.csff__btn--onred { color: #fff; border-color: #fff; background: transparent; }
+.csff__btn--onred:hover, .csff__btn--onred:focus-visible { background: #fff; color: var(--brick); border-color: #fff; }
 
 /* ---------- theme / parchment panel ---------- */
 .csff__parchment {
@@ -313,20 +191,58 @@
   .csff__parchment::before { content: ""; position: absolute; inset: 0; background: rgba(244,234,214,.80); }
 }
 
-/* ---------- red plan band ---------- */
-.csff__planband { background: var(--brick); }
-.csff__planbandinner { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; align-items: center; justify-content: space-between; padding-block: clamp(2rem, 4vw, 2.75rem); }
-.csff__planband h2.csff__h { color: #fff; font-size: clamp(1.6rem, 3.2vw, 2.2rem); }
-.csff__planband p { color: #f6e3dc; margin-top: .4rem; }
-.csff__btn--onred { color: #fff; border-color: #fff; background: transparent; }
-.csff__btn--onred:hover, .csff__btn--onred:focus-visible { background: #fff; color: var(--brick); border-color: #fff; }
+/* ---------- plan your day cards ---------- */
+.csff__plan { padding: clamp(4rem, 8vw, 6rem) 0; }
+.csff__plangrid { display: grid; grid-template-columns: 1fr; gap: clamp(2.5rem, 5vw, 4rem); align-items: start; }
+@media (min-width: 940px) { .csff__plangrid { grid-template-columns: .85fr 2fr; } }
+.csff__cards { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+@media (min-width: 620px) { .csff__cards { grid-template-columns: repeat(3, 1fr); } }
+.csff__card { text-align: center; text-decoration: none; display: block; color: inherit; }
+.csff__cardimg { aspect-ratio: 4/3; background-size: cover; background-position: center; background-image: var(--fallback); }
+.csff__card:nth-child(1) .csff__cardimg { background-image: var(--csff-img-card-1), var(--fallback); }
+.csff__card:nth-child(2) .csff__cardimg { background-image: var(--csff-img-card-2), var(--fallback); }
+.csff__card:nth-child(3) .csff__cardimg { background-image: var(--csff-img-card-3), var(--fallback); }
+.csff__card h3 { margin-top: .9rem; }
+.csff__card p { font-size: .95rem; margin-top: .35rem; }
+.csff__card:hover h3, .csff__card:focus-visible h3 { color: var(--brick); }
 
-/* light version of the info band */
-.csff__bandgrid--light { color: var(--body); }
-.csff__bandgrid--light .csff__banditem svg { stroke: var(--olive); }
-.csff__bandgrid--light .csff__banditem dt { color: var(--ink); }
-.csff__bandgrid--light .csff__banditem dd { color: var(--body); }
-.csff__bandgrid--light .csff__banditem + .csff__banditem { border-left-color: var(--line); }
+/* ---------- sections & schedule ---------- */
+.csff__section { padding: clamp(4rem, 8vw, 6.5rem) 0; }
+.csff__section--alt { background: var(--cream-2); }
+.csff__sechead { max-width: 62ch; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.csff__sechead--center { text-align: center; margin-inline: auto; }
+
+.csff__schedule { list-style: none; padding: 0; max-width: 860px; }
+.csff__slot { display: grid; grid-template-columns: 120px 1fr; gap: 1.8rem; padding: 1.9rem 0; border-top: 1px solid var(--line); }
+.csff__slot:last-child { border-bottom: 1px solid var(--line); }
+.csff__slot time { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; color: var(--brick); padding-top: .12rem; }
+.csff__slot h3 { font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; font-size: 1.02rem; letter-spacing: .05em; color: var(--ink); }
+.csff__slot p { font-size: .98rem; margin-top: .25rem; }
+.csff__where { font-size: .88rem; color: var(--olive); font-weight: 600; }
+
+.csff__dayhead {
+  font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase;
+  font-size: 1.6rem; letter-spacing: .05em; color: var(--ink);
+  margin-top: 3.5rem; padding-bottom: .7rem; border-bottom: 3px solid var(--brick);
+}
+.csff__schedule + .csff__dayhead, .csff__dayhead:first-of-type { margin-top: 0; }
+.csff__sponsor { font-size: .86rem; color: #6f7162; margin-top: .4rem; }
+.csff__sponsor b { font-weight: 600; color: var(--olive); }
+
+/* live stage list */
+.csff__stage { list-style: none; padding: 0; display: grid; gap: 0 2.5rem; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .csff__stage { grid-template-columns: repeat(2, 1fr); } }
+.csff__stage li { display: grid; grid-template-columns: 72px 1fr; gap: 1rem; padding: .85rem 0; border-top: 1px solid var(--line); }
+.csff__stage time { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: .95rem; color: var(--brick); }
+.csff__stage span { font-size: 1rem; line-height: 1.4; }
+
+/* ---------- info cards ---------- */
+.csff__grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+@media (min-width: 760px) { .csff__grid--3 { grid-template-columns: repeat(3,1fr); } .csff__grid--2 { grid-template-columns: repeat(2,1fr); } }
+.csff__box { background: var(--cream); border: 1px solid var(--line); border-top: 4px solid var(--olive); padding: 2.2rem 2rem; }
+.csff__section--alt .csff__box { background: #fff; }
+.csff__box:nth-child(2) { border-top-color: var(--brick); }
+.csff__box p { font-size: .98rem; margin-top: .55rem; }
 
 /* ---------- sponsor list ---------- */
 .csff__sponsorlist { list-style: none; padding: 0; margin-top: 2rem; display: grid; gap: 0 2.5rem; grid-template-columns: 1fr; }
@@ -354,3 +270,65 @@
 .csff__check input { width: auto; margin-top: .35rem; flex: none; }
 .csff__check label { text-transform: none; letter-spacing: 0; font-family: 'Barlow', sans-serif; font-weight: 400; font-size: .98rem; color: var(--body); }
 .csff__hp { position: absolute; left: -9999px; }
+
+/* ---------- donate ---------- */
+.csff__donate { background: var(--olive); color: #fff; padding: clamp(4rem, 8vw, 6rem) 0; }
+.csff__donate h2.csff__h { color: #fff; }
+.csff__donate .csff__eyebrow { color: #d8c98f; }
+.csff__donate p { color: #eaeddf; }
+
+/* ---------- footer ---------- */
+.csff__foot { background: var(--olive-dk); color: #dfe3d2; padding: 3.25rem 0; }
+.csff__footinner { display: flex; flex-wrap: wrap; gap: 1.4rem 2rem; align-items: center; justify-content: center; text-align: center; }
+.csff__foot a { color: #fff; }
+.csff__social { display: flex; gap: .7rem; }
+.csff__social a { width: 38px; height: 38px; border: 1.5px solid rgba(255,255,255,.65); border-radius: 50%; display: grid; place-content: center; }
+.csff__social svg { width: 17px; height: 17px; fill: #fff; }
+
+/* ---------- quality floor ---------- */
+.csff a:focus-visible { outline: 3px solid var(--brick); outline-offset: 3px; }
+.csff__band a:focus-visible, .csff__donate a:focus-visible, .csff__foot a:focus-visible { outline-color: #fff; }
+.csff__skip { position: absolute; left: -9999px; background: var(--ink); color: #fff; padding: .8rem 1.3rem; z-index: 60; }
+.csff__skip:focus { left: 1rem; top: 1rem; }
+.csff--js .csff__reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.csff--js .csff__reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .csff--js .csff__reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- phones ---------- */
+@media (max-width: 560px) {
+  .csff__nav { position: static; }
+  .csff__navinner { gap: .55rem 1.15rem; padding-block: 1rem; }
+  .csff__nav a { font-size: .82rem; letter-spacing: .04em; }
+  .csff__nav a.csff__btn { padding: .6rem 1.2rem; font-size: .78rem; }
+
+  .csff__slot { grid-template-columns: 1fr; gap: .3rem; padding: 1.5rem 0; }
+  .csff__slot time { font-size: 1.1rem; }
+
+  .csff__featgrid { grid-template-columns: 1fr; }
+  .csff__feat { border-left: 0; border-top: 1px solid var(--line); padding: 1.75rem 1rem; }
+  .csff__feat:first-child { border-top: 0; }
+
+  .csff__stage li { grid-template-columns: 60px 1fr; }
+}
+
+/* ---------- big monitors ---------- */
+@media (min-width: 1500px) {
+  .csff { font-size: 1.15rem; }
+  .csff__wrap { max-width: 1360px; }
+  .csff__hero h1 { font-size: 6.2rem; }
+  .csff__hero { min-height: 740px; }
+}
+
+/* ---------- container alignment (keep last) ---------- */
+.csff__hero .csff__heroinner,
+.csff__band .csff__bandgrid {
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: clamp(1.1rem, 4vw, 2.5rem);
+}
+@media (min-width: 1500px) {
+  .csff__hero .csff__heroinner,
+  .csff__band .csff__bandgrid { max-width: 1360px; }
+}

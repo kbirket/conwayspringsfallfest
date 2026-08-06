@@ -30,6 +30,9 @@
 <nav class="csff__nav" aria-label="Main">
   <div class="csff__wrap csff__navinner">
     {% assign home_url = '/home' %}{% if site.launched %}{% assign home_url = '/' %}{% endif %}
+    <a class="csff__logo" href="{{ home_url }}">
+      <img src="/images/csfflogo.png" alt="Conway Springs Fall Festival">
+    </a>
     <a href="{{ home_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Home</a>
     <a href="/schedule"{% if page.nav == 'schedule' %} aria-current="page"{% endif %}>Schedule</a>
     <a href="/parade"{% if page.nav == 'parade' %} aria-current="page"{% endif %}>Parade</a>
