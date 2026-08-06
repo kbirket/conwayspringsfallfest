@@ -99,12 +99,13 @@
 }
 .csff__hero::before {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(248,243,233,.97) 0%, rgba(248,243,233,.93) 34%, rgba(248,243,233,.55) 56%, rgba(248,243,233,0) 78%);
+  background: linear-gradient(90deg, rgba(248,243,233,.94) 0%, rgba(248,243,233,.82) 26%, rgba(248,243,233,.35) 48%, rgba(248,243,233,0) 68%);
 }
 @media (max-width: 760px) {
   .csff__hero::before { background: linear-gradient(180deg, rgba(248,243,233,.96) 0%, rgba(248,243,233,.9) 62%, rgba(248,243,233,.55) 100%); }
 }
-.csff__heroinner { position: relative; z-index: 1; max-width: 660px; padding-block: clamp(3.75rem, 9vw, 6rem); }
+.csff__heroinner { position: relative; z-index: 1; max-width: 1180px; padding-block: clamp(3.75rem, 9vw, 6rem); }
+.csff__heroinner > * { max-width: 660px; }
 .csff__hero h1 {
   font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;
   font-size: clamp(2.9rem, 8.5vw, 5.4rem); line-height: .92; color: var(--ink);
