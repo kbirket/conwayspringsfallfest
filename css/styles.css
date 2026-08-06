@@ -1,6 +1,6 @@
 .csff {
   /* ---------- IMAGE SLOTS — paste your photo URLs here ---------- */
---csff-img-hero:     url('../images/fallfestpic.jpeg');   /* wide festival crowd shot */
+--csff-img-hero:     url('../images/fallfestfront.png');   /* wide festival crowd shot */
 --csff-img-together: url('../images/DogFallFest.jpeg');   /* booths under trees */
   --csff-img-card-1:   url('');   /* schedule / stage */
   --csff-img-card-2:   url('');   /* parade */
