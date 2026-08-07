@@ -2,31 +2,142 @@
 layout: default
 title: Vendors
 nav: vendors
-description: Arts and Crafts Fair booth information for the Conway Springs Fall Festival.
+description: Booth registration for the Conway Springs Fall Festival Arts and Crafts Fair. 10x10 booths, $30. Deadline September 20, 2026.
 ---
 
 <section class="csff__section">
   <div class="csff__wrap">
     <div class="csff__sechead">
       <p class="csff__eyebrow">Makers &amp; Merchants</p>
-      <h2 class="csff__h">Arts &amp; Crafts Fair</h2>
-      <p class="csff__lede">Spring Avenue turns into a market street from 9:00 a.m. to 4:30 p.m. Spaces are assigned in the order applications arrive.</p>
+      <h2 class="csff__h">Vendor Registration</h2>
+      <p class="csff__lede">Spring Avenue turns into a market street from 9:00 a.m. to 4:30 p.m. Register below, then mail your payment to hold your space.</p>
     </div>
 
-    <div class="csff__grid csff__grid--2">
+    <div class="csff__grid csff__grid--3">
       <div class="csff__box">
-        <h3 class="csff__h3">What you get</h3>
-        <p>A booth space and your business listed on the festival map. Bring your own tent, tables and weights &mdash; it gets breezy.</p><!-- EDIT: size, fee, setup time -->
+        <h3 class="csff__h3">Booths</h3>
+        <p><strong>10&times;10 &mdash; $30 each.</strong> Electricity is an additional $15, and electric spots are limited, so ask early if you need one.</p>
       </div>
       <div class="csff__box">
-        <h3 class="csff__h3">How to claim one</h3>
-        <p>Send in the application with your fee. Spaces are limited and usually fill before the deadline.</p><!-- EDIT: fee + deadline -->
+        <h3 class="csff__h3">Deadline</h3>
+        <p><strong>September 20, 2026.</strong> Registration and payment must both be received by then.</p>
+      </div>
+      <div class="csff__box">
+        <h3 class="csff__h3">Bring your own</h3>
+        <p>Tables, chairs, canopies, drop cords and anything else your booth needs. This is an outdoor event &mdash; plan for wind and weather.</p>
       </div>
     </div>
 
-    <div class="csff__btns">
-      <a class="csff__btn" href="#REPLACE-LINK">Apply for a booth</a>
-      <a class="csff__btn csff__btn--ghost" href="#REPLACE-LINK">Vendor packet (PDF)</a>
+    <h3 class="csff__dayhead" style="margin-top:3.5rem;">Rules</h3>
+    <ul class="csff__rules">
+      <li>No weapons, real or toy, and no fireworks.</li>
+      <li>Vendors are responsible for filing Kansas State Sales Tax.</li>
+      <li>The Conway Springs Fall Festival and the City of Conway Springs are not responsible for loss, theft or damage. Vendors accept responsibility for their own property.</li>
+    </ul>
+
+    <h3 class="csff__dayhead" style="margin-top:3.5rem;">Register</h3>
+    <p class="csff__lede">Fill this out and we'll follow up with payment details and your booth assignment.</p>
+
+    <form class="csff__form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- EDIT: paste your Formspree endpoint above -->
+
+      <div class="csff__field csff__field--row">
+        <div>
+          <label for="vf-name">Name <span class="csff__req">*</span></label>
+          <input type="text" id="vf-name" name="Name" required>
+        </div>
+        <div>
+          <label for="vf-business">Business name</label>
+          <input type="text" id="vf-business" name="Business name">
+        </div>
+      </div>
+
+      <div class="csff__field csff__field--row">
+        <div>
+          <label for="vf-email">Email <span class="csff__req">*</span></label>
+          <input type="email" id="vf-email" name="email" required>
+        </div>
+        <div>
+          <label for="vf-phone">Phone <span class="csff__req">*</span></label>
+          <input type="tel" id="vf-phone" name="Phone" required>
+        </div>
+      </div>
+
+      <div class="csff__field">
+        <label for="vf-address">Mailing address <span class="csff__req">*</span></label>
+        <input type="text" id="vf-address" name="Address" required>
+      </div>
+
+      <div class="csff__field csff__field--row">
+        <div>
+          <label for="vf-city">City <span class="csff__req">*</span></label>
+          <input type="text" id="vf-city" name="City" required>
+        </div>
+        <div class="csff__field--row" style="margin:0;">
+          <div>
+            <label for="vf-state">State <span class="csff__req">*</span></label>
+            <input type="text" id="vf-state" name="State" required>
+          </div>
+          <div>
+            <label for="vf-zip">ZIP <span class="csff__req">*</span></label>
+            <input type="text" id="vf-zip" name="ZIP" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="csff__field">
+        <label for="vf-items">All items you plan to sell <span class="csff__req">*</span>
+          <span class="csff__hint">Be specific &mdash; this helps us avoid putting similar booths next to each other.</span>
+        </label>
+        <textarea id="vf-items" name="Items for sale" required></textarea>
+      </div>
+
+      <div class="csff__field csff__field--row">
+        <div>
+          <label for="vf-booths">Number of booths <span class="csff__req">*</span>
+            <span class="csff__hint">$30 each</span>
+          </label>
+          <input type="number" id="vf-booths" name="Number of booths" min="1" value="1" required>
+        </div>
+        <div>
+          <label for="vf-electric">Electricity needed?
+            <span class="csff__hint">Additional $15, limited spots</span>
+          </label>
+          <select id="vf-electric" name="Electricity">
+            <option>No</option>
+            <option>Yes</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="csff__field">
+        <label for="vf-taxid">Kansas Tax ID # <span class="csff__req">*</span>
+          <span class="csff__hint">Vendors are responsible for filing Kansas State Sales Tax.</span>
+        </label>
+        <input type="text" id="vf-taxid" name="Tax ID" required>
+      </div>
+
+      <div class="csff__field csff__check">
+        <input type="checkbox" id="vf-liability" name="Accepted liability terms" value="Yes" required>
+        <label for="vf-liability">I understand the Conway Springs Fall Festival and the City of Conway Springs are not responsible for loss, theft or damage, and I accept responsibility for my property. <span class="csff__req">*</span></label>
+      </div>
+
+      <div class="csff__field csff__check">
+        <input type="checkbox" id="vf-rules" name="Accepted rules" value="Yes" required>
+        <label for="vf-rules">I understand no weapons, real or toy, and no fireworks may be sold. <span class="csff__req">*</span></label>
+      </div>
+
+      <input type="text" name="_gotcha" class="csff__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="_subject" value="Vendor registration — Conway Springs Fall Festival">
+
+      <button type="submit" class="csff__btn">Submit registration</button>
+    </form>
+
+    <div class="csff__box" style="margin-top:2.5rem;max-width:720px;">
+      <h3 class="csff__h3">Payment</h3>
+      <p>Your space isn't held until payment is received. Make checks payable to the Conway Springs Fall Festival and mail to the address below by September 20.</p>
+      <p><!-- EDIT: mailing address --></p>
+      <p>Questions? Email <a href="mailto:csfallfest@gmail.com">csfallfest@gmail.com</a>.</p>
     </div>
   </div>
 </section>
