@@ -231,27 +231,37 @@
 
 /* expandable events */
 .csff__event { min-width: 0; }
-.csff__event summary {
-  list-style: none; cursor: pointer;
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .9rem;
-  padding-right: 2rem; position: relative;
-}
+.csff__event summary { list-style: none; cursor: pointer; display: block; }
 .csff__event summary::-webkit-details-marker { display: none; }
+.csff__event summary::marker { content: ""; }
 .csff__event summary h3 {
   font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase;
   font-size: 1.02rem; letter-spacing: .05em; color: var(--ink); margin: 0;
 }
-.csff__event summary .csff__where { font-size: .88rem; color: var(--olive); font-weight: 600; }
-.csff__event summary::after {
-  content: ""; position: absolute; right: .3rem; top: .45rem;
-  width: 9px; height: 9px;
-  border-right: 2px solid var(--brick); border-bottom: 2px solid var(--brick);
-  transform: rotate(45deg); transition: transform .18s ease;
-}
-.csff__event[open] summary::after { transform: rotate(-135deg); top: .7rem; }
+.csff__event summary .csff__where { display: block; font-size: .88rem; color: var(--olive); font-weight: 600; margin-top: .25rem; }
 .csff__event summary:hover h3, .csff__event summary:focus-visible h3 { color: var(--brick); }
 .csff__event summary:focus-visible { outline: 3px solid var(--brick); outline-offset: 4px; }
-.csff__eventbody { padding-top: .7rem; }
+
+.csff__more {
+  display: inline-flex; align-items: center; gap: .45rem; margin-top: .7rem;
+  font-family: 'Oswald', sans-serif; font-weight: 600;
+  font-size: .78rem; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--brick);
+  border: 2px solid rgba(176,68,42,.4); padding: .4rem .9rem;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.csff__event summary:hover .csff__more { background: var(--brick); border-color: var(--brick); color: #fff; }
+.csff__more::after {
+  content: ""; width: 7px; height: 7px;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px); transition: transform .18s ease;
+}
+.csff__event[open] .csff__more::after { transform: rotate(-135deg) translateY(-2px); }
+.csff__event[open] .csff__more .csff__more-open { display: inline; }
+.csff__event[open] .csff__more .csff__more-shut { display: none; }
+.csff__more .csff__more-open { display: none; }
+
+.csff__eventbody { padding-top: 1.1rem; }
 .csff__eventbody p { font-size: .98rem; margin-top: .35rem; }
 .csff__eventbody p:first-child { margin-top: 0; }
 .csff__subhead {
