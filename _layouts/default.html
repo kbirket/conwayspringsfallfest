@@ -35,6 +35,72 @@
     </a>
     <a href="{{ home_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Home</a>
     <a href="/schedule"{% if page.nav == 'schedule' %} aria-current="page"{% endif %}>Schedule</a>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} — Conway Springs Fall Festival</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+{% unless site.launched %}<meta name="robots" content="noindex, nofollow">{% endunless %}
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page.title }} — Conway Springs Fall Festival">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:image" content="{{ site.url }}/images/og-share.jpg"><!-- EDIT: 1200x630 share image -->
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/images/favicon.png"><!-- EDIT: add a favicon -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap">
+
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="csff">
+
+<a class="csff__skip" href="#csff-main">Skip to main content</a>
+
+<nav class="csff__nav" aria-label="Main">
+  <div class="csff__wrap csff__navinner">
+    {% assign home_url = '/home' %}{% if site.launched %}{% assign home_url = '/' %}{% endif %}
+    <a class="csff__logo" href="{{ home_url }}">
+      <img src="/images/csfflogo.png" alt="Conway Springs Fall Festival">
+    </a>
+    <a href="{{ home_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Home</a>
+    <a href="/schedule"{% if page.nav == 'schedule' %} aria-current="page"{% endif %}>Schedule</a>
+        <a href="/run"{% if page.nav == 'run' %} aria-current="page"{% endif %}>Fun Run</a>
+    <a href="/parade"{% if page.nav == 'parade' %} aria-current="page"{% endif %}>Parade</a>
+    <a href="/vendors"{% if page.nav == 'vendors' %} aria-current="page"{% endif %}>Vendors</a>
+    <a href="/sponsors"{% if page.nav == 'sponsors' %} aria-current="page"{% endif %}>Sponsors</a>
+    <a href="/info"{% if page.nav == 'info' %} aria-current="page"{% endif %}>Info</a>
+    <a class="csff__btn" href="/support">Support Us</a>
+  </div>
+</nav>
+
+<main id="csff-main">
+{{ content }}
+</main>
+
+<footer class="csff__foot">
+  <div class="csff__wrap csff__footinner">
+    <p style="font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.88rem;">Follow us</p>
+    <div class="csff__social">
+      <a href="https://www.facebook.com/profile.php?id=100069818202133" target="_blank" rel="noopener noreferrer" aria-label="Fall Fest on Facebook (opens in a new tab)"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+      <a href="mailto:csfallfest@gmail.com" aria-label="Email the Fall Fest committee"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3V5zm2 2v.4l7 4.6 7-4.6V7H5z"/></svg></a>
+    </div>
+    <p style="width:100%;">Conway Springs Fall Festival &middot; Conway Springs, Kansas</p>
+  </div>
+</footer>
+
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
     <a href="/parade"{% if page.nav == 'parade' %} aria-current="page"{% endif %}>Parade</a>
     <a href="/vendors"{% if page.nav == 'vendors' %} aria-current="page"{% endif %}>Vendors</a>
     <a href="/sponsors"{% if page.nav == 'sponsors' %} aria-current="page"{% endif %}>Sponsors</a>
