@@ -1,183 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conway Springs Fall Fest — Coming Soon</title>
-  <style>
-    /* Reset & CSS Variables */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
+---
+layout: default
+title: Home
+nav: home
+description: Conway Springs Fall Festival — Saturday, September 26, 2026. Parade, car show, live music, arts and crafts, food and fireworks in downtown Conway Springs, Kansas.
+---
 
-    :root {
-      --bg-color: #0f172a;
-      --card-bg: rgba(30, 41, 59, 0.7);
-      --accent-orange: #f97316;
-      --accent-amber: #f59e0b;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 1.5rem;
-    }
-
-    /* Animated Background Glowing Orbs */
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      z-index: 0;
-      opacity: 0.5;
-      animation: float 10s ease-in-out infinite alternate;
-    }
-
-    .orb-1 {
-      width: 350px;
-      height: 350px;
-      background: var(--accent-orange);
-      top: -10%;
-      left: -10%;
-    }
-
-    .orb-2 {
-      width: 400px;
-      height: 400px;
-      background: var(--accent-amber);
-      bottom: -15%;
-      right: -10%;
-      animation-delay: -5s;
-    }
-
-    @keyframes float {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(40px, 30px) scale(1.1); }
-    }
-
-    /* Main Container (Glassmorphism Effect) */
-    .card {
-      position: relative;
-      z-index: 1;
-      max-width: 600px;
-      width: 100%;
-      background: var(--card-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      padding: 3rem 2rem;
-      text-align: center;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Badge */
-    .badge {
-      display: inline-block;
-      padding: 0.4rem 1rem;
-      background: rgba(249, 115, 22, 0.15);
-      color: var(--accent-orange);
-      border: 1px solid rgba(249, 115, 22, 0.3);
-      border-radius: 9999px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Heading with Text Gradient */
-    h1 {
-      font-size: 2.75rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, #ffffff 30%, var(--accent-orange) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    p {
-      color: var(--text-muted);
-      font-size: 1.125rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-    }
-
-    /* Progress Status Indicator */
-    .status-container {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 1rem 1.25rem;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-
-    .pulse-dot {
-      width: 10px;
-      height: 10px;
-      background-color: var(--accent-amber);
-      border-radius: 50%;
-      position: relative;
-    }
-
-    .pulse-dot::after {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
-      border-radius: 50%;
-      border: 2px solid var(--accent-amber);
-      animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    @keyframes ping {
-      75%, 100% {
-        transform: scale(2);
-        opacity: 0;
-      }
-    }
-
-    .status-text {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-main);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Background Orbs -->
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-
-  <!-- Content Card -->
-  <main class="card">
-    <div class="badge">🍂 Fall Fest Update</div>
-    <h1>Something Big is Coming</h1>
-    <p>We are currently updating the official website for the Conway Springs Fall Fest. Check back soon for event details, schedules, and vendor information!</p>
-    
-    <div class="status-container">
-      <div class="pulse-dot"></div>
-      <span class="status-text">Site updates in progress...</span>
+<header class="csff__hero">
+  <div class="csff__wrap csff__heroinner">
+    <p class="csff__eyebrow">Join us for the</p>
+    <h1>Fall Festival</h1>
+    <div class="csff__div" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-2 3.2-5 5.4-5 9a5 5 0 0 0 4 4.9V22h2v-6.1A5 5 0 0 0 17 11c0-3.6-3-5.8-5-9z"/></svg>
     </div>
-  </main>
+    <p class="csff__herosub">Knights, Nobles &amp; Autumn Magic</p>
+    <p class="csff__herolist">Parade &middot; Car Show &middot; Live Music &middot; Crafts &middot; Fireworks</p>
 
-</body>
-</html>
+    <div class="csff__datebadge">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      <div>
+                <b>September 26 &amp; 27, 2026</b>
+        <span>Contests begin the week before &middot; fireworks Saturday at 9 p.m.</span>
+      </div>
+    </div>
+
+    <div class="csff__btns">
+      <a class="csff__btn" href="/schedule">View schedule</a>
+      <a class="csff__btn csff__btn--olive" href="/info">Festival map</a>
+    </div>
+  </div>
+</header>
+
+<section class="csff__features csff__reveal">
+  <div class="csff__wrap">
+    <h2 class="csff__h">Something for everyone</h2>
+    <div class="csff__div csff__div--center" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-2 3.2-5 5.4-5 9a5 5 0 0 0 4 4.9V22h2v-6.1A5 5 0 0 0 17 11c0-3.6-3-5.8-5-9z"/></svg>
+    </div>
+
+    <div class="csff__featgrid">
+      <div class="csff__feat">
+        <svg viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
+        <h3>Live Music</h3>
+        <p>Bands on the band shell stage from midday into the evening.</p>
+      </div>
+      <div class="csff__feat">
+        <svg viewBox="0 0 24 24"><path d="M12 3 3 11h18L12 3z"/><path d="M5 11v10h14V11"/><path d="M9 21v-5h6v5"/></svg>
+        <h3>Arts &amp; Crafts</h3>
+        <p>Local makers along Spring Avenue, 9:30 a.m. to 4:30 p.m.</p>
+      </div>
+      <div class="csff__feat">
+        <svg viewBox="0 0 24 24"><path d="M7 3v9M5 3v4a2 2 0 0 0 4 0V3M7 12v9"/><path d="M17 3c-1.5 2-2 4-2 6h4c0-2-.5-4-2-6zM17 9v12"/></svg>
+        <h3>Food &amp; Drink</h3>
+        <p>Food trucks, ice cream, and dinner in the park.</p>
+      </div>
+      <div class="csff__feat">
+        <svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/><path d="M12 4V2"/></svg>
+        <h3>Grand Parade</h3>
+        <p>Floats, tractors, horses and the royal court at eleven o'clock.</p>
+      </div>
+      <div class="csff__feat">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15.5 14.2c2.6.4 4.5 2.6 4.5 5.3"/></svg>
+        <h3>Family Friendly</h3>
+        <p>Inflatables, petting zoo, Touch-A-Truck and axe throwing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="csff__split csff__reveal" aria-label="About the festival">
+  <div class="csff__splitimg" role="img" aria-label="A dog among pumpkins at the fall festival"></div>
+  <div class="csff__splittext">
+    <p class="csff__eyebrow">Make Memories</p>
+    <h2 class="csff__h">Celebrate fall<br>together</h2>
+    <p class="csff__lede">This year we're going full renaissance &mdash; a royal court in the parade, a beard and mustache contest, and axe throwing in the park. Costumes welcome, not required.</p>
+    <p class="csff__lede" style="margin-top:.7rem;">Bring your friends and family for a day of seasonal fun, good food and small-town spirit. We can't wait to see you.</p>
+    <div class="csff__btns">
+      <a class="csff__btn csff__btn--olive" href="/schedule">View the schedule</a>
+    </div>
+  </div>
+</section>
+
+<section class="csff__band" aria-label="Festival essentials">
+  <dl class="csff__wrap csff__bandgrid">
+    <div class="csff__banditem">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <div><dt>When</dt><dd>Saturday, Sept 26 &middot; 7 a.m.&ndash;9 p.m.<br>Sunday, Sept 27 &middot; worship at noon</dd></div>
+    </div>
+    <div class="csff__banditem">
+      <svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      <div><dt>Where</dt><dd>Conway Springs City Park<br>and downtown Spring Ave</dd></div>
+    </div>
+    <div class="csff__banditem">
+      <svg viewBox="0 0 24 24"><path d="M3 8V6h18v2a2 2 0 0 0 0 4v2H3v-2a2 2 0 0 0 0-4z"/><path d="M9 6v10"/></svg>
+      <div><dt>Admission</dt><dd>Free to attend<br>All ages welcome</dd></div>
+    </div>
+  </dl>
+</section>
+
+<section class="csff__parchment csff__reveal" aria-labelledby="theme-h">
+  <div class="csff__wrap csff__themegrid">
+    <div class="csff__themeart">
+      <img src="/images/button2026.png" alt="The 2026 Fall Fest button: a castle, dragon, sword and helm, lettered Renaissance: Knights, Nobles and Autumn Magic">
+      <!-- EDIT: save the button artwork as images/button2026.png -->
+    </div>
+    <div>
+      <p class="csff__eyebrow">2026 Theme</p>
+      <h2 class="csff__h" id="theme-h">Renaissance:<br>Knights, Nobles &amp; Autumn Magic</h2>
+      <p class="csff__lede">Each year our button contest brings the theme to life, and this year's winning design captures the spirit of it. Thank you to Michelle Willson for the artwork.</p>
+      <p class="csff__lede" style="margin-top:.7rem;">Buttons go on sale at the concession stand. Costumes are welcome in the parade &mdash; there's a prize for the entry that commits hardest to the theme.</p>
+      <div class="csff__btns">
+        <a class="csff__btn csff__btn--olive" href="/support">Get a button</a>
+      </div>
+    </div>
+  </div>
+</section>
