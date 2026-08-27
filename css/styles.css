@@ -387,6 +387,12 @@
 @media (min-width: 760px) { .csff__shirtgrid { grid-template-columns: 320px 1fr; } }
 .csff__shirtgrid img { width: 100%; }
 
+.csff__slot p > a:not([href*="facebook"]) {
+  font-family: inherit; font-size: inherit; font-weight: 600;
+  letter-spacing: normal; text-transform: none;
+  color: var(--brick); text-decoration: underline;
+}
+
 /* ---------- container alignment (keep last) ---------- */
 .csff__hero .csff__heroinner,
 .csff__band .csff__bandgrid {
