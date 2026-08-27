@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap">
 
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/quick-schedule.css">
 </head>
 <body>
 
@@ -40,9 +41,35 @@
     <a href="/vendors"{% if page.nav == 'vendors' %} aria-current="page"{% endif %}>Vendors</a>
     <a href="/sponsors"{% if page.nav == 'sponsors' %} aria-current="page"{% endif %}>Sponsors</a>
     <a href="/info"{% if page.nav == 'info' %} aria-current="page"{% endif %}>Info</a>
+    <button class="csff__quickbtn" type="button" aria-expanded="false" aria-controls="csff-quick-schedule" data-quick-schedule-open>Quick Schedule</button>
     <a class="csff__btn" href="/support">Support Us</a>
   </div>
 </nav>
+
+<div class="csff__quickbackdrop" data-quick-schedule-backdrop hidden></div>
+<section class="csff__quickpanel" id="csff-quick-schedule" aria-label="Quick schedule" hidden>
+  <div class="csff__quickinner">
+    <div class="csff__quickhead">
+      <div>
+        <p class="csff__quickdate">Saturday, September 26, 2026</p>
+        <h2>Quick Schedule</h2>
+      </div>
+      <button class="csff__quickclose" type="button" aria-label="Close quick schedule" data-quick-schedule-close>&times;</button>
+    </div>
+    <ul class="csff__quicklist">
+      <li class="csff__quickitem"><span class="csff__quicktime">8:00 AM</span><span class="csff__quickname">2 Mile Fun Run / Walk</span></li>
+      <li class="csff__quickitem"><span class="csff__quicktime">9:30 AM</span><span class="csff__quickname">Arts &amp; Crafts Fair</span></li>
+      <li class="csff__quickitem"><span class="csff__quicktime">11:00 AM</span><span class="csff__quickname">Fall Festival Parade</span></li>
+      <li class="csff__quickitem"><span class="csff__quicktime">12:00 PM</span><span class="csff__quickname">Gladiator Inflatables &middot; Axe Throwing</span></li>
+      <li class="csff__quickitem"><span class="csff__quicktime">1:00 PM</span><span class="csff__quickname">Ice Cream Social &middot; Touch-A-Truck &middot; Petting Zoo</span></li>
+      <li class="csff__quickitem"><span class="csff__quicktime">2:30 PM</span><span class="csff__quickname">Cornhole Tournament</span></li>
+      <li class="csff__quickitem"><span class="csff__quicktime">6:00 PM</span><span class="csff__quickname">Beard &amp; Mustache Contest</span></li>
+      <li class="csff__quickitem"><span class="csff__quicktime">7:45 PM</span><span class="csff__quickname">Fall Fest Family Dance</span></li>
+      <li class="csff__quickitem"><span class="csff__quicktime">9:00 PM</span><span class="csff__quickname">Fireworks</span></li>
+    </ul>
+    <div class="csff__quickfoot"><a href="/schedule">View full schedule &rarr;</a></div>
+  </div>
+</section>
 
 <main id="csff-main">
 {{ content }}
@@ -62,5 +89,6 @@
 </div>
 
 <script src="/js/main.js"></script>
+<script src="/js/quick-schedule.js"></script>
 </body>
 </html>
