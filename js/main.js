@@ -21,3 +21,14 @@
 
   items.forEach(function (el) { io.observe(el); });
 })();
+
+(function () {
+  var btn = document.querySelector('.csff__menubtn');
+  var links = document.getElementById('csff-navlinks');
+  if (!btn || !links) return;
+  btn.addEventListener('click', function () {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    links.classList.toggle('is-open', !open);
+  });
+})();

@@ -33,14 +33,21 @@
     <a class="csff__logo" href="{{ home_url }}">
       <img src="/images/csfflogo.png" alt="Conway Springs Fall Festival">
     </a>
-    <a href="{{ home_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Home</a>
-    <a href="/schedule"{% if page.nav == 'schedule' %} aria-current="page"{% endif %}>Schedule</a>
-    <a href="/run"{% if page.nav == 'run' %} aria-current="page"{% endif %}>Fun Run</a>
-    <a href="/parade"{% if page.nav == 'parade' %} aria-current="page"{% endif %}>Parade</a>
-    <a href="/vendors"{% if page.nav == 'vendors' %} aria-current="page"{% endif %}>Vendors</a>
-    <a href="/sponsors"{% if page.nav == 'sponsors' %} aria-current="page"{% endif %}>Sponsors</a>
-    <a href="/info"{% if page.nav == 'info' %} aria-current="page"{% endif %}>Info</a>
-    <a class="csff__btn" href="/support">Support Us</a>
+
+    <button type="button" class="csff__menubtn" aria-expanded="false" aria-controls="csff-navlinks" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="csff__navlinks" id="csff-navlinks">
+      <a href="{{ home_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Home</a>
+      <a href="/schedule"{% if page.nav == 'schedule' %} aria-current="page"{% endif %}>Schedule</a>
+      <a href="/run"{% if page.nav == 'run' %} aria-current="page"{% endif %}>Fun Run</a>
+      <a href="/parade"{% if page.nav == 'parade' %} aria-current="page"{% endif %}>Parade</a>
+      <a href="/vendors"{% if page.nav == 'vendors' %} aria-current="page"{% endif %}>Vendors</a>
+      <a href="/sponsors"{% if page.nav == 'sponsors' %} aria-current="page"{% endif %}>Sponsors</a>
+      <a href="/info"{% if page.nav == 'info' %} aria-current="page"{% endif %}>Info</a>
+      <a class="csff__btn" href="/support">Support Us</a>
+    </div>
   </div>
 </nav>
 

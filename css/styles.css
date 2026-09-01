@@ -402,6 +402,46 @@
 .csff__glance span { font-size: 1rem; line-height: 1.35; }
 .csff__glance em { font-style: normal; color: var(--olive); font-size: .92rem; }
 
+/* ---------- mobile menu ---------- */
+.csff__menubtn { display: none; }
+
+@media (max-width: 900px) {
+  .csff__navinner { justify-content: space-between; gap: 0; padding-block: .75rem; position: relative; }
+  .csff__logo { margin: 0; flex-basis: auto; }
+  .csff__logo img { width: 165px; }
+
+  .csff__menubtn {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: .6rem .4rem;
+  }
+  .csff__menubtn span { display: block; width: 26px; height: 3px; background: var(--olive); transition: transform .2s ease, opacity .2s ease; }
+  .csff__menubtn[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .csff__menubtn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .csff__menubtn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .csff__menubtn:focus-visible { outline: 3px solid var(--brick); outline-offset: 2px; }
+
+  .csff__navlinks {
+    display: none; flex-basis: 100%; flex-direction: column;
+    padding-top: .75rem; margin-top: .75rem; border-top: 1px solid var(--line);
+  }
+  .csff__navlinks.is-open { display: flex; }
+  .csff__nav .csff__navlinks a { padding: .8rem 0; border-bottom: 0; font-size: 1.05rem; }
+  .csff__nav .csff__navlinks a.csff__btn { margin-top: .6rem; align-self: flex-start; border-bottom: 0; }
+
+  /* hero: stronger scrim so the headline reads */
+  .csff__hero::before {
+    background: linear-gradient(180deg, rgba(248,243,233,.97) 0%, rgba(248,243,233,.94) 55%, rgba(248,243,233,.72) 100%);
+  }
+  .csff__hero { min-height: auto; }
+  .csff__hero .csff__heroinner { padding-block: 2rem 2.5rem; }
+  .csff__hero h1 { font-size: clamp(2.6rem, 13vw, 3.6rem); }
+  .csff__div { margin: 1rem 0; }
+  .csff__datebadge { margin-top: 1.4rem; padding: 1rem 1.2rem; }
+}
+@media (min-width: 901px) {
+  .csff__navlinks { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 2.2rem; }
+}
+
 /* ---------- container alignment (keep last) ---------- */
 .csff__hero .csff__heroinner,
 .csff__band .csff__bandgrid {
