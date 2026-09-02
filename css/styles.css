@@ -365,6 +365,7 @@
 
   .csff__slot { grid-template-columns: 1fr; gap: .3rem; padding: 1.5rem 0; }
   .csff__slot time { font-size: 1.1rem; }
+    .csff__slot time br { display: inline; content: " "; }
       .csff__slot time { display: block; margin-bottom: .35rem; }
 
   .csff__featgrid { grid-template-columns: 1fr; }
