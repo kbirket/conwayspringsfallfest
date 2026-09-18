@@ -443,6 +443,21 @@
   .csff__navlinks { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 2.2rem; }
 }
 
+/* ---------- event sponsor list ---------- */
+.csff__sponsorlist--events { grid-template-columns: 1fr !important; }
+.csff__sponsorlist--events li { padding: .9rem 0; display: block; }
+.csff__sponsorlist--events strong {
+  display: block;
+  font-family: 'Oswald', sans-serif; font-weight: 600;
+  text-transform: uppercase; font-size: .84rem; letter-spacing: .07em;
+  color: var(--ink); margin-bottom: .25rem;
+}
+.csff__sponsorlist--events span { display: block; color: var(--body); }
+@media (min-width: 760px) {
+  .csff__sponsorlist--events li { display: grid; grid-template-columns: 300px 1fr; gap: 1.5rem; align-items: baseline; }
+  .csff__sponsorlist--events strong { margin-bottom: 0; }
+}
+
 /* ---------- container alignment (keep last) ---------- */
 .csff__hero .csff__heroinner,
 .csff__band .csff__bandgrid {
