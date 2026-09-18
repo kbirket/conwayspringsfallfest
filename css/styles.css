@@ -458,6 +458,26 @@
   .csff__sponsorlist--events strong { margin-bottom: 0; }
 }
 
+/* ---------- map thumbnails ---------- */
+.csff__mapfig--thumb { max-width: 520px; }
+.csff__mapfig--thumb a { display: block; position: relative; }
+.csff__mapfig--thumb img { width: 100%; transition: opacity .15s ease; }
+.csff__mapfig--thumb a:hover img { opacity: .88; }
+.csff__mapfig--thumb a::after {
+  content: "Tap to enlarge";
+  position: absolute; bottom: .7rem; right: .7rem;
+  font-family: 'Oswald', sans-serif; font-weight: 600;
+  font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+  background: rgba(43,48,24,.82); color: #fff;
+  padding: .35rem .7rem;
+}
+.csff__mapfig--thumb a:focus-visible { outline: 3px solid var(--brick); outline-offset: 3px; }
+
+@media (min-width: 900px) {
+  .csff__mapgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+  .csff__mapgrid .csff__mapfig { margin-top: 0; max-width: none; }
+}
+
 /* ---------- container alignment (keep last) ---------- */
 .csff__hero .csff__heroinner,
 .csff__band .csff__bandgrid {
