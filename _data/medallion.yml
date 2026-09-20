@@ -1,0 +1,39 @@
+- day: 5
+  show_after: 2026-09-24 06:00:00 -05:00
+  date: Thursday, September 24
+  text: |
+    After thy quest, seek a hearty repast.
+    A hot meal to savor, with a cool drink at last.
+    There, feast and drink, and let thy toil be past.
+
+- day: 4
+  show_after: 2026-09-23 06:00:00 -05:00
+  date: Wednesday, September 23
+  text: |
+    Raise up thy banner, let triumph be known;
+    A victor's pride shall point thee home.
+    Tales of thy glories will fill a large tome.
+
+- day: 3
+  show_after: 2026-09-22 06:00:00 -05:00
+  date: Tuesday, September 22
+  text: |
+    By plow and by seed, for the harvest we pray,
+    For God made a farmer on the eighth day.
+    Work must be done before one can play.
+
+- day: 2
+  show_after: 2026-09-21 06:00:00 -05:00
+  date: Monday, September 21
+  text: |
+    Alone is not the path of a conquering knight,
+    No matter his wits or courage or might,
+    Great deeds are wrought when many hands make work light.
+
+- day: 1
+  show_after: 2026-09-20 12:00:00 -05:00
+  date: Sunday, September 20
+  text: |
+    Seek the tales of those who came before,
+    Roots run deep as well as the lore,
+    For every great Kingdom has great stories of yore.
