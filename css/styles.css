@@ -480,6 +480,14 @@
 }
 }
 
+/* ---------- medallion clues ---------- */
+.csff__clues { list-style: none; padding: 0; margin: 1rem 0 0; max-width: 720px; }
+.csff__clue { border-left: 4px solid var(--brick); padding: 1rem 0 1rem 1.3rem; margin-bottom: 1.1rem; background: rgba(176,68,42,.04); }
+.csff__clue:last-child { border-left-color: var(--olive); background: rgba(76,90,46,.08); }
+.csff__cluenum { font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; font-size: .78rem; letter-spacing: .1em; color: var(--brick); }
+.csff__clue:last-child .csff__cluenum { color: var(--olive); }
+.csff__cluetext { font-size: 1.08rem; line-height: 1.6; color: var(--ink); margin-top: .5rem; white-space: pre-line; }
+
 /* ---------- container alignment (keep last) ---------- */
 .csff__hero .csff__heroinner,
 .csff__band .csff__bandgrid {

@@ -33,7 +33,7 @@ description: Full schedule of events for the Conway Springs Fall Festival, Satur
             {% assign now = site.time | date: '%s' | plus: 0 %}
             {% assign shown = 0 %}
             <ol class="csff__clues">
-              {% for clue in site.data.medallion %}
+                            {% for clue in site.data.medallion reversed %}
                 {% assign release = clue.show_after | date: '%s' | plus: 0 %}
                 {% if release <= now %}
                 <li class="csff__clue">
@@ -47,7 +47,7 @@ description: Full schedule of events for the Conway Springs Fall Festival, Satur
             {% if shown == 0 %}
             <p>The first clue posts Sunday, September 20 at noon.</p>
             {% endif %}
-            
+
             <p class="csff__sponsor" style="margin-top:1.2rem;"><b>Hosted by:</b> Tamara and Brandon Salisbury &middot; <b>Sponsor:</b> Pauly Veterinary Services</p>
             <p><a href="https://www.facebook.com/events/2618125811952052" target="_blank" rel="noopener noreferrer">Details on Facebook &rarr;</a></p>
           </div>
