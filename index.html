@@ -74,9 +74,11 @@ description: Conway Springs Fall Festival — Saturday, September 26, 2026. Para
     <div>
       <p class="csff__eyebrow" style="color:#f6e3dc;">Happening Now</p>
       <h2 class="csff__h">The Great Medallion Hunt</h2>
-            {% assign latest = nil %}
+             {% assign now = site.time | date: '%s' | plus: 0 %}
+      {% assign latest = nil %}
       {% for clue in site.data.medallion %}
-        {% if clue.show_after <= site.time and latest == nil %}
+        {% assign release = clue.show_after | date: '%s' | plus: 0 %}
+        {% if release <= now and latest == nil %}
           {% assign latest = clue %}
         {% endif %}
       {% endfor %}

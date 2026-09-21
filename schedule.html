@@ -29,11 +29,13 @@ description: Full schedule of events for the Conway Springs Fall Festival, Satur
             <p>The first clue posted Sunday, September 20 at noon. A new clue posts every morning at 6:00 a.m. until the medallion is found &mdash; here, on the Fall Fest and Red Power Nutrition Facebook pages, and in Red Power Nutrition's front window.</p>
             <p>Once you find it, take it to <strong>Red Power Nutrition</strong> to claim your $100.</p>
 
-            <h4 class="csff__subhead">Clues</h4>
+                       <h4 class="csff__subhead">Clues</h4>
+            {% assign now = site.time | date: '%s' | plus: 0 %}
             {% assign shown = 0 %}
             <ol class="csff__clues">
               {% for clue in site.data.medallion %}
-                {% if clue.show_after <= site.time %}
+                {% assign release = clue.show_after | date: '%s' | plus: 0 %}
+                {% if release <= now %}
                 <li class="csff__clue">
                   <p class="csff__cluenum">Clue {{ clue.day }} &middot; {{ clue.date }}</p>
                   <p class="csff__cluetext">{{ clue.text }}</p>
@@ -45,7 +47,7 @@ description: Full schedule of events for the Conway Springs Fall Festival, Satur
             {% if shown == 0 %}
             <p>The first clue posts Sunday, September 20 at noon.</p>
             {% endif %}
-
+            
             <p class="csff__sponsor" style="margin-top:1.2rem;"><b>Hosted by:</b> Tamara and Brandon Salisbury &middot; <b>Sponsor:</b> Pauly Veterinary Services</p>
             <p><a href="https://www.facebook.com/events/2618125811952052" target="_blank" rel="noopener noreferrer">Details on Facebook &rarr;</a></p>
           </div>
